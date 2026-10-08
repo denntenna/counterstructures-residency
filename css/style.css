@@ -1,22 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300..700&display=swap');
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 :root {
-  --bg:     #002370;
-  --text:   #E6EAF4;
-  --muted:  #8096C6;
-  --faint:  #4D6BAF;
-  --border: #1A4198;
-  --font:   'Inter', system-ui, sans-serif;
+  --bg: #E6EAF4;
+  --text: #002370;
+  --muted: #1A4198;
+  --faint: #4D6BAF;
+  --border: #8096C6;
+  --font: 'Inter', system-ui, sans-serif;
 
-  --main-w:  560px;
+  --main-w: 560px;
   --panel-w: 180px;
-  --gap:     2.5rem;
+  --gap: 2.5rem;
 }
 
 html {
@@ -65,7 +67,9 @@ html {
   letter-spacing: 0.01em;
 }
 
-.site-header nav a:hover { color: var(--muted); }
+.site-header nav a:hover {
+  color: var(--muted);
+}
 
 /* ── Side panels ────────────────────────────────────── */
 
@@ -104,11 +108,15 @@ html {
   font-weight: 400;
 }
 
-.panel-section a:hover { color: var(--text); }
+.panel-section a:hover {
+  color: var(--text);
+}
 
 /* ── Main content ───────────────────────────────────── */
 
-main { min-width: 0; }
+main {
+  min-width: 0;
+}
 
 /* ── Typography ─────────────────────────────────────── */
 
@@ -147,14 +155,19 @@ a {
   text-underline-offset: 2px;
 }
 
-a:hover { color: var(--muted); }
+a:hover {
+  color: var(--muted);
+}
 
-ul, ol {
+ul,
+ol {
   padding-left: 1.25em;
   margin-bottom: 1.25rem;
 }
 
-li { line-height: 1.7; }
+li {
+  line-height: 1.7;
+}
 
 /* ── Post ───────────────────────────────────────────── */
 
@@ -183,7 +196,9 @@ article time {
   border-bottom: 1px solid var(--border);
 }
 
-.posts-list li:first-child { border-top: 1px solid var(--border); }
+.posts-list li:first-child {
+  border-top: 1px solid var(--border);
+}
 
 .posts-list a {
   font-size: 0.9375rem;
@@ -205,9 +220,13 @@ article time {
     grid-template-columns: 1fr;
   }
 
-  .site-header nav { margin-left: 0; }
+  .site-header nav {
+    margin-left: 0;
+  }
 
-  .panel-left { display: none; }
+  .panel-left {
+    display: none;
+  }
 
   .panel-right {
     position: static;

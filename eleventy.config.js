@@ -19,9 +19,10 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
+    pathPrefix: "/counterstructures-residency/",
     dir: {
       input: ".",
-      output: "_site",
+      output: "docs",
       includes: "_includes",
     },
   };

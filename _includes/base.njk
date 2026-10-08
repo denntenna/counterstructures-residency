@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if title %}{{ title }} — {% endif %}Counterstructures Residency</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
 </head>
 <body>
   <div class="page-wrapper">
 
     <header class="site-header">
       <nav>
-        <a href="/">Home</a>
-        <a href="/posts/">Posts</a>
+        <a href="{{ '/' | url }}">Home</a>
+        <a href="{{ '/posts/' | url }}">Posts</a>
       </nav>
     </header>
 
