@@ -4,20 +4,84 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hello World — Counterstructures Residency</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/posts/">Posts</a>
-  </nav>
-  <main>
-    <article>
+  <div class="page-wrapper">
+
+    <header class="site-header">
+      <nav>
+        <a href="/">Home</a>
+        <a href="/posts/">Posts</a>
+      </nav>
+    </header>
+
+    <aside class="panel-left" id="panel-toc"></aside>
+
+    <main><article>
   <h1>Hello World</h1>
   <time datetime="2026-10-08">October 8, 2026</time>
   <p>This is the first post on the Counterstructures Residency blog.</p>
 
 </article>
+</main>
 
-  </main>
+    <aside class="panel-right">
+      <div class="panel-section">
+        <h4>Project links</h4>
+        <ul>
+          <li><a href="#">Repository</a></li>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Research notes</a></li>
+          <li><a href="#">Reference work</a></li>
+        </ul>
+      </div>
+      <div class="panel-section">
+        <h4>Related</h4>
+        <ul>
+          <li><a href="#">Collaborator site</a></li>
+          <li><a href="#">Exhibition page</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <script>
+    (function () {
+      var article = document.querySelector('article');
+      var tocPanel = document.getElementById('panel-toc');
+      if (!article || !tocPanel) return;
+
+      var headings = article.querySelectorAll('h1');
+      if (!headings.length) return;
+
+      var ul = document.createElement('ul');
+      headings.forEach(function (h, i) {
+        if (!h.id) {
+          h.id = h.textContent.trim()
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-|-$/g, '') || ('section-' + i);
+        }
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+
+      var section = document.createElement('div');
+      section.className = 'panel-section';
+
+      var label = document.createElement('h4');
+      label.textContent = 'Contents';
+      section.appendChild(label);
+      section.appendChild(ul);
+
+      tocPanel.appendChild(section);
+    })();
+  </script>
 </body>
 </html>
